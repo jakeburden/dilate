@@ -4,7 +4,7 @@
   "description": "Static blog generator",
   "main": "index.js",
   "bin": {
-    "dilate": "./bin.js"
+    "dilate": "bin.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,17 @@
     "@iarna/toml": "^2.2.3",
     "handlebars": "^4.5.3",
     "minimist": "^1.2.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jakeburden/dilate.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/jakeburden/dilate/issues"
+  },
+  "homepage": "https://gitlab.com/jakeburden/dilate#readme"
 }
