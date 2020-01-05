@@ -1,0 +1,24 @@
+{
+  "name": "dilate",
+  "version": "0.0.1",
+  "description": "Static blog generator",
+  "main": "index.js",
+  "bin": {
+    "dilate": "./bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "staitc",
+    "blog",
+    "generator"
+  ],
+  "author": "Jake Burden <jake@burden.blog>",
+  "license": "MIT",
+  "dependencies": {
+    "@iarna/toml": "^2.2.3",
+    "handlebars": "^4.5.3",
+    "minimist": "^1.2.0"
+  }
+}
