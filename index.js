@@ -4,7 +4,7 @@ const TOML = require('@iarna/toml')
 const { Liquid } = require('liquidjs')
 const liquid = new Liquid()
 
-exports.writer = async function build(path) {
+exports.writer = async function writer(path) {
   const contentPath = join(path, 'content')
   const files = await readdir(contentPath)
   files.forEach(async file => {
