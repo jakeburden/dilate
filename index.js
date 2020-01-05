@@ -14,7 +14,7 @@ exports.writer = async function build(path) {
       const configTemplate = toml.config && toml.config.template
       const templatesPath = join(path, 'templates')
       const templatePath = configTemplate
-        ? join(templatesPath, configTemplate)
+        ? join(templatesPath, configTemplate + '.liquid')
         : join(templatesPath, 'index.liquid')
       const template = (await readFile(templatePath)).toString()
       const output = await liquid.parseAndRender(template, toml)

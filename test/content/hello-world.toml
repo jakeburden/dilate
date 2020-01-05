@@ -1,4 +1,4 @@
 article = 'test'
 
 [config]
-template = 'blog.html'
+template = 'blog'
