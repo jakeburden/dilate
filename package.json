@@ -18,8 +18,10 @@
   "license": "MIT",
   "dependencies": {
     "@iarna/toml": "^2.2.3",
+    "@parcel/watcher": "^2.0.0-alpha.4",
     "liquidjs": "^9.6.1",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "parcel-bundler": "^1.12.4"
   },
   "directories": {
     "test": "test"
