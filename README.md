@@ -1,66 +1,53 @@
 # dilate
 
-> A lightweight static blog generator that transforms TOML content files into HTML using Liquid templates.
+A static blog generator that turns TOML files into HTML using Liquid templates.
 
-## What is dilate?
+## What is this?
 
-**dilate** is a file-watching static site generator designed for simplicity. It monitors your content and template directories, automatically rebuilding your site whenever changes are detected. Think of it as a minimal, convention-based approach to building blogs and simple websites.
+dilate watches your content and template directories and rebuilds your site when you make changes. You write content in TOML, create templates in Liquid, and get static HTML out. It uses Parcel to bundle JavaScript and CSS.
 
-### How it works
-
-1. **Write content in TOML** - Create `.toml` files in your `content/` directory with structured data
-2. **Design templates with Liquid** - Build reusable `.liquid` templates in your `templates/` directory  
-3. **Auto-generate HTML** - dilate watches for changes and renders your content through templates into static HTML
-4. **Bundle with Parcel** - Automatically bundles JavaScript and other assets using Parcel
-
-### Key Features
-
-- 📝 **TOML-based content** - Simple, readable content format
-- 🎨 **Liquid templating** - Powerful, familiar template syntax
-- 👀 **File watching** - Automatic rebuilds on content or template changes
-- 📦 **Built-in bundling** - Parcel integration for modern web assets
-- ⚡ **Zero config** - Works with a simple directory structure
+I made this because I wanted something simpler than Jekyll but more structured than just writing HTML by hand. No config files, no plugins, no theme system. Just content files and templates.
 
 ## Install
 
 ```bash
-$ npm i dilate -g
+npm i dilate -g
 ```
 
 ## Usage
 
 ```bash
-$ dilate <path>
+dilate <path>
 ```
 
-If no path is provided, dilate will use the current working directory.
+Point it at a directory with `content/` and `templates/` folders. If you don't give it a path, it uses the current directory.
 
-### Project Structure
+## How it works
 
-Your project should follow this structure:
+Put TOML files in `content/` and Liquid templates in `templates/`. dilate reads each `.toml` file, finds the matching template, and renders HTML into `dist-tmp/`.
 
 ```
 my-blog/
-├── content/           # Your TOML content files
+├── content/
 │   ├── index.toml
 │   └── hello-world.toml
-├── templates/         # Your Liquid templates
+├── templates/
 │   ├── index.liquid
 │   └── blog.liquid
-└── dist-tmp/          # Generated HTML output (created automatically)
+└── dist-tmp/          (generated)
 ```
 
-### Example Content (content/index.toml)
+Example content file:
 
 ```toml
 [config]
-template = "index"  # Optional: specify which template to use
+template = "index"
 
 [header]
-bio = "Welcome to my blog!"
+bio = "This is my blog."
 ```
 
-### Example Template (templates/index.liquid)
+Example template:
 
 ```html
 <!DOCTYPE html>
@@ -74,10 +61,10 @@ bio = "Welcome to my blog!"
 </html>
 ```
 
-dilate will render `index.toml` using `index.liquid` (or the specified template) and output `index.html` in the `dist-tmp/` directory.
+Each `.toml` file becomes an `.html` file. If you specify a template in the `[config]` section, it uses that. Otherwise it uses `index.liquid`.
 
-## WIP
+## Status
 
-⚠️ Still in early development and things may change.
+This is still early. The API will probably change. I'm using it for my own site but it's rough around the edges.
 
 ![](dilate.gif)
